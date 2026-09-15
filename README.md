@@ -27,7 +27,7 @@
 
 Students do **not** need to install Node.js, Python, or write any code:
 
-### 📥 **[Download Latest RankSync for Windows (.zip)](https://github.com)**
+### 📥 **[Download Latest RankSync for Windows (.zip)](https://github.com/arshdevx/RankSync/releases/tag/v1.0.0)**
 
 1. Go to **Releases** on GitHub and download **`RankSync-Windows.zip`**.
 2. Right-click the downloaded `.zip` file and click **"Extract All..."**.
