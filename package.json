@@ -1,0 +1,56 @@
+{
+  "name": "ranksync",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "RankSync - Academic Mission Control & Multi-Syllabus Tracker for CBSE & JEE",
+  "main": "electron/main.cjs",
+  "author": "arshdevx",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "electron:start": "electron .",
+    "app": "concurrently -k \"vite\" \"wait-on tcp:5173 && electron .\"",
+    "build:app": "npm run build && electron-builder --win portable --dir",
+    "dist": "npm run build && electron-builder --win portable",
+    "bundle:exe": "npm run build && node build-asar.js"
+  },
+  "build": {
+    "appId": "com.arshdevx.ranksync",
+    "productName": "RankSync",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "lucide-react": "^1.45.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "electron": "^44.3.0",
+    "electron-builder": "^26.15.3",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "wait-on": "^9.1.0"
+  }
+}
